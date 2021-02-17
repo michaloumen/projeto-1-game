@@ -28,14 +28,15 @@ h1 {
   margin-top: -10px;
 }
 
-/* .invisible {
+.invisible {
   background-color: white;
-} */
+}
 
 body {
+  background-image: url("https://cdn.gamedevmarket.net/wp-content/uploads/20191203151404/082c4faf72d352b18b32cf82b6ac68ad-700x389.jpg");
+  background-size: 100%;
   max-width: 100vh;
   display: flex;
-  background-image: url("/candy-crush-background-2.png");
 }
 
 .score-board {
