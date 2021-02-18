@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-left: 80px;
-  margin-top: 50px;
+  margin-top: 150px;
   background-color: rgba(109, 127, 151, 0.5);
   padding: 5px;
   border-radius: 10px;
@@ -17,14 +17,27 @@
   width: 70px;
 }
 
+p {
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 85px;
+  text-shadow: 5px 10px 5px #fb75ff;
+  text-align: center;
+  white-space: nowrap;
+  padding-left: 480px;
+  margin-top: 0px;
+}
+
 h3 {
   font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
+  font-size: 40px;
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 85px;
+  text-shadow: 5px 10px 5px #fb75ff;
   margin-top: -10px;
 }
 
@@ -43,8 +56,8 @@ body {
   background-color: pink;
   border-radius: 10px;
   margin-top: 200px;
-  margin-left: 200px;
-  margin-bottom: 350px;
+  margin-left: -600px;
+  margin-bottom: 250px;
   min-width: 200px;
 
   display: flex;
