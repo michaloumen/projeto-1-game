@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const squares = [];
   let score = 0;
 
+  /*   const audio = document.querySelector("#player");
+  audio.play(); */
+
   //todas as cores que terá no jogo
   const candyColors = [
     "url(images/red-candy.png)",
@@ -125,6 +128,88 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+
+  //para combinações de 5
+  function checkRowForFive() {
+    for (i = 0; i < 59; i++) {
+      let rowOfFive = [i, i + 1, i + 2, i + 3, i + 4];
+      let decidedColor = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
+
+      const notValid = [
+        4,
+        5,
+        6,
+        7,
+        12,
+        13,
+        14,
+        15,
+        20,
+        21,
+        22,
+        23,
+        28,
+        29,
+        30,
+        31,
+        36,
+        37,
+        38,
+        39,
+        44,
+        45,
+        46,
+        47,
+        52,
+        53,
+        54,
+        55,
+      ];
+      if (notValid.includes(i)) continue;
+
+      if (
+        rowOfFive.every(
+          (index) =>
+            squares[index].style.backgroundImage === decidedColor && !isBlank
+        )
+      ) {
+        score += 5;
+        scoreDisplay.innerHTML = score;
+        rowOfFive.forEach((index) => {
+          squares[index].style.backgroundImage = "";
+        });
+      }
+    }
+  }
+  checkRowForFive();
+
+  function checkColumnForFive() {
+    for (i = 0; i < 47; i++) {
+      let columnOfFive = [
+        i,
+        i + width,
+        i + width * 2,
+        i + width * 3,
+        i + width * 4,
+      ];
+      let decidedColor = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
+
+      if (
+        columnOfFive.every(
+          (index) => squares[index].backgroundImage === decidedColor && !isBlank
+        )
+      ) {
+        score += 5;
+        scoreDisplay.innerHTML = score;
+        columnOfFive.forEach((index) => {
+          squares[index].style.backgroundImage = "";
+        });
+      }
+    }
+  }
+  checkColumnForFive();
 
   //para combinações de 4
   function checkRowForFour() {
@@ -252,6 +337,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //mas isso de apagar as 3 linhas só acontece quando inicia o navegador. Durante o jogo isso não acontecerá mais e não é para ser assim. Por isso, vamos usar o setInterval
   window.setInterval(function () {
     moveDown();
+    checkRowForFive();
+    checkColumnForFive();
     checkRowForFour();
     checkColumnForFour();
     checkRowForThree();
