@@ -17,7 +17,8 @@
   width: 70px;
 }
 
-#startGame {
+#startTimer,
+#startMoves {
   padding-bottom: 8px;
   font-family: "Pacifico", cursive;
   box-sizing: border-box;
@@ -51,8 +52,13 @@ p > .score-board {
 }
 
 h3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 30px;
+  font-family: "PT Sans", sans-serif;
 }
 
 #score {
@@ -77,10 +83,10 @@ body {
 .score-board {
   background-color: pink;
   border-radius: 10px;
-  margin-top: 200px;
-  margin-left: -600px;
+  margin-top: 220px;
+  margin-left: -800px;
   margin-bottom: 250px;
-  min-width: 200px;
+  min-width: 500px;
 
   display: flex;
   flex-direction: column;

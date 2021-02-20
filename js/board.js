@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const scoreDisplay = document.getElementById("score");
-  const startBtn = document.querySelector("#startGame");
+  const startBtnOne = document.querySelector("#startTimer");
+  const startBtnTwo = document.querySelector("startMoves");
   const timeLeftDisplay = document.querySelector("#time-left");
-  let timeLeft = 10;
   const width = 8; //será de 8x8
   const squares = [];
   let score = 0;
+  let timeLeft = 30;
   let colorBeingDragged;
   let colorBeingReplaced;
   let squareIdBeingDragged;
   let squareIdBeingReplaced;
+  let firstMove = false;
 
   const candyColors = [
     "url(images/red-candy.png)",
@@ -28,26 +30,27 @@ document.addEventListener("DOMContentLoaded", () => {
         grid.style.display = "none";
       }
 
-      timeLeftDisplay.innerHTML = `seconds left: ${timeLeft}`;
+      timeLeftDisplay.innerHTML = `Seconds left: ${timeLeft}`;
       timeLeft -= 1;
-      if (timeLeft <= 0 && score > 10) {
-        timeLeftDisplay.innerHTML = "Congrats, you won";
+      if (timeLeft <= 0 && score > 150) {
+        timeLeftDisplay.innerHTML = "Congrats, you won! 🎉";
       }
-      if (timeLeft <= 0) {
-        timeLeftDisplay.innerHTML = "You ran out of time";
+      if (timeLeft <= 0 && score < 150) {
+        timeLeftDisplay.innerHTML = "You ran out of moves 🥵";
       }
     }, 1000);
   }
 
-  startBtn.addEventListener("click", countDown);
+  startBtnOne.addEventListener("click", countDown);
 
   window.onload = function () {
-    var startGame = document.getElementById("startGame");
+    var startTimer = document.getElementById("startTimer");
     grid.style.display = "none";
-    timeLeftDisplay.innerHTML = `You Have ${timeLeft} minuts`;
+    timeLeftDisplay.innerHTML = `You Have ${timeLeft} seconds to gain 150 points<br><br> 🍬🍩 Now crush that candy! 🍩🍬`;
 
-    startGame.onclick = function () {
-      document.getElementById("startGame");
+    startTimer.onclick = function () {
+      document.getElementById("startTimer").style.display = "none";
+      document.getElementById("startMoves").style.display = "none";
       grid.style.display = "flex";
 
       function createBoard() {
@@ -406,11 +409,9 @@ document.addEventListener("DOMContentLoaded", () => {
         checkColumnForFour();
         checkRowForThree();
         checkColumnForThree();
-        document.getElementById("startGame").style.display = "none";
       }, 100);
     };
   };
-
   /*   const audio = document.querySelector("#player");
   audio.play(); */
 });
