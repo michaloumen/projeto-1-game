@@ -18,18 +18,24 @@
 }
 
 #startGame {
-  background-color: #4caf50; /* Green */
+  padding-bottom: 8px;
+  font-family: "Pacifico", cursive;
+  box-sizing: border-box;
+  font-weight: bold;
+  min-width: 150px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  border-style: solid;
+  border-color: #fe4495;
+  text-shadow: 3px 2px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  background-image: linear-gradient(#fe4495, #d5095f);
   border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  order-radius: 4px;
+  outline: none;
 }
 
-p {
+h1 {
   font-family: "Lobster", cursive;
   color: white;
   font-size: 85px;
@@ -40,12 +46,16 @@ p {
   margin-top: 0px;
 }
 
+p > .score-board {
+  text-decoration: none;
+}
+
 h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
 }
 
-h1 {
+#score {
   font-family: "Lobster", cursive;
   color: white;
   font-size: 85px;

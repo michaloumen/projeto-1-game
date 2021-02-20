@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const scoreDisplay = document.getElementById("score");
+  const startBtn = document.querySelector("#startGame");
+  const timeLeftDisplay = document.querySelector("#time-left");
+  let timeLeft = 10;
   const width = 8; //será de 8x8
   const squares = [];
   let score = 0;
+  let colorBeingDragged;
+  let colorBeingReplaced;
+  let squareIdBeingDragged;
+  let squareIdBeingReplaced;
 
   const candyColors = [
     "url(images/red-candy.png)",
@@ -14,16 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
     "url(images/blue-candy.png)",
   ];
 
-  let colorBeingDragged;
-  let colorBeingReplaced;
-  let squareIdBeingDragged;
-  let squareIdBeingReplaced;
+  function countDown() {
+    setInterval(function () {
+      if (timeLeft <= 0) {
+        clearInterval((timeLeft = 0));
+        grid.style.display = "none";
+      }
+
+      timeLeftDisplay.innerHTML = `seconds left: ${timeLeft}`;
+      timeLeft -= 1;
+      if (timeLeft <= 0 && score > 10) {
+        timeLeftDisplay.innerHTML = "Congrats, you won";
+      }
+      if (timeLeft <= 0) {
+        timeLeftDisplay.innerHTML = "You ran out of time";
+      }
+    }, 1000);
+  }
+
+  startBtn.addEventListener("click", countDown);
 
   window.onload = function () {
     var startGame = document.getElementById("startGame");
+    grid.style.display = "none";
+    timeLeftDisplay.innerHTML = `You Have ${timeLeft} minuts`;
 
     startGame.onclick = function () {
-      let startGame = document.getElementById("startGame");
+      document.getElementById("startGame");
+      grid.style.display = "flex";
 
       function createBoard() {
         for (let i = 0; i < width * width; i++) {
@@ -385,8 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     };
   };
+
   /*   const audio = document.querySelector("#player");
   audio.play(); */
-
-  //todas as cores que terá no jogo
 });
