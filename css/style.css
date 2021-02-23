@@ -19,11 +19,13 @@
 
 #startTimer,
 #startMoves {
-  padding-bottom: 8px;
+  /*   display: flex; */
+  /*   margin-top: 0px; */
+  margin-bottom: 10px;
   font-family: "Pacifico", cursive;
   box-sizing: border-box;
-  font-weight: bold;
-  min-width: 150px;
+  /* font-weight: lighter; */
+  min-width: 100px;
   font-size: 28px;
   color: #fff;
   cursor: pointer;
@@ -47,18 +49,15 @@ h1 {
   margin-top: 0px;
 }
 
-p > .score-board {
-  text-decoration: none;
-}
-
 h3 {
   font-family: "PT Sans", sans-serif;
   font-size: 30px;
 }
 
 h4 {
-  font-size: 30px;
+  font-size: 25px;
   font-family: "PT Sans", sans-serif;
+  margin-left: 10px;
 }
 
 #score {
@@ -66,7 +65,7 @@ h4 {
   color: white;
   font-size: 85px;
   text-shadow: 5px 10px 5px #fb75ff;
-  margin-top: -10px;
+  margin-top: -100px;
 }
 
 .invisible {
@@ -86,7 +85,8 @@ body {
   margin-top: 220px;
   margin-left: -800px;
   margin-bottom: 250px;
-  min-width: 500px;
+  min-width: 400px;
+  min-height: 200px;
 
   display: flex;
   flex-direction: column;
