@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let colorBeingReplaced;
   let squareIdBeingDragged;
   let squareIdBeingReplaced;
+  let mode = "";
 
   const candyColors = [
     "url(images/red-candy.png)",
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function countDown() {
+    console.log("oi");
     timeLeftDisplay.innerHTML = `Seconds left: ${timeLeft}<br><br>SCORE:`;
     setInterval(function () {
       if (timeLeft <= 0) {
@@ -47,11 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (moveLeft > 0) {
       timeLeftDisplay.style.display = "none";
       moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}`;
-    } else if (moveLeft > 0 && validMove) {
+    }
+    if (moveLeft === 0) {
       moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}`;
-      //como a coisinha entender que eu mexi?
-      moveLeft -= 1;
-    } else {
       grid.style.display = "none";
     }
   }
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
       grid.style.display = "flex";
+      mode = "timer";
       executeGame();
     };
 
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
       grid.style.display = "flex";
+      mode = "moves";
       executeGame();
     };
 
@@ -121,6 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
         squareIdBeingDragged = parseInt(this.id);
         console.log(colorBeingDragged);
         console.log(this.id, "dragstart");
+        if (mode === "moves") {
+          moveLeft -= 1;
+          countMoves();
+        }
       }
 
       //'e' para 'event'
