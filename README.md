@@ -1,34 +1,33 @@
-# Candy Crush Replica 
+# Project #1
+![alt text] (https://github.com/michaloumen/projeto-1-game/blob/master/candycrush__1_-removebg-preview.png?raw=true)
 
-Este é meu primeiro projeto de codificação como parte do bootcamp Ironhack. Onde reproduzi o jogo Candy Crush utilizando HTML, CSS e Javascript. 
+This is my first project as part of the Ironhack bootcamp. Where to play the Candy Crush game using HTML, CSS and Javascript.
 
 ## Summary 
 - [Game rules](#game-rules)
-- [Prerequisites](#prerequisites)
 - [Installing](#installing)
-- [Version](#version)
-- [Authors and resources](#authors-and-resources)
-- [Roadmap](#roadmap)
 - [Acknowledgments](#acknowledgments)
+- [Credits](#credits)
+- [About me](#about-me)
 
-## Introdução ao Jogo
-Este é um jogo de computador baseado no jogo Candy Crush. 
 
-## Regras do Jogo 
+## Game Rules
+Candy Crush is a single player game where players swap pieces of colored candy on a board to make a combination of three, four or five identical colors in a row or column. It is possible to exchange a piece of place with those around it. Scoring is done using these combinations. When this happens, the combined candies are crushed and a new random combination is generated.
+The objective of this game is to achieve the defined score. There are two options for game modes: Play Timer and Play Moves. In the timer, there is a time limit for making the combinations. And in moves, there is a movement limit. When this limit is exhausted, it is possible to know if you won or lost by the message that will appear on the screen.
 
-## Começando 
-Este jogo funciona no navegador e não precisa de instalação 
-Link para rodas o jogo em seu navegador => aqui  [here](https://tamisakita.github.io/othello-game-project/)
+## Installing
+You can run it offline by downloading/cloning the project files or you can run my online instance from [GitHub Pages] (https://michaloumen.github.io/projeto-1-game/)
+
 ----------------------------
-## Agradecimentos 
-- **Henrique** - Instructor
-- **Ingrid** - Teacher Assistant
+## Acknowledgments 
+To **Henrique Mendes** and **Ingrid Pitta** for teaching and helping me to get here.
 
-##Cŕeditos 
-- **Ania Kubów** - Youtuber de onde obtive o tutorial para iniciar o código
+## Credits 
+To **Ania Kubów** where I got the tutorial to start the project.
 
-## Sobre mim 
+## About me  
 Michelle Mendonça 
-e-mail michelle.lmendonca@gmail.com
-Linked-in:
+Github: https://github.com/michaloumen
+E-mail michelle.lmendonca@gmail.com
+Linkedin: https://www.linkedin.com/in/michelle-louren%C3%A7o-mendon%C3%A7a-856b83169/
 
