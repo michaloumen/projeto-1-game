@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!--     <audio
-      id="player"
-      src="/POL-the-hordes-advance-short.wav"
-      type="audio/mpeg"
-      loop
-    ></audio> -->
-
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
@@ -22,14 +15,14 @@
     />
     <h1>Candy Crush</h1>
     <div class="score-board">
-      <h4><span id="time-left"></span></h4>
-      <h4><span id="move-left"></span></h4>
+      <h4>
+        <span id="move-left"><span id="time-left"></span></span>
+      </h4>
 
       <style>
         @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
       </style>
 
-      <!-- <h3>Score</h3> -->
       <p id="score"></p>
 
       <button id="startTimer">Play Timer!</button>
@@ -37,6 +30,13 @@
     </div>
 
     <div class="grid"></div>
+
+    <!--     <audio
+      id="player"
+      src="http://www.largesound.com/ashborytour/sound/brobob.mp3"
+      type="audio/mpeg"
+      loop
+    ></audio> -->
 
     <script src="./js/board.js"></script>
   </body>

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const squares = [];
   let score = 0;
   let timeLeft = 30;
-  let moveLeft = 10;
+  let moveLeft = 30;
   let colorBeingDragged;
   let colorBeingReplaced;
   let squareIdBeingDragged;
@@ -48,11 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function countMoves() {
     if (moveLeft > 0) {
       timeLeftDisplay.style.display = "none";
-      moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}`;
+      moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}<br><br>SCORE:`;
     }
     if (moveLeft === 0) {
-      moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}`;
+      moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}<br><br>SCORE:`;
       grid.style.display = "none";
+    }
+
+    if (moveLeft <= 0 && score > 150) {
+      moveLeftDisplay.innerHTML = "Congrats, you won! 🎉";
+    }
+    if (moveLeft <= 0 && score < 150) {
+      moveLeftDisplay.innerHTML = "You ran out of moves 🥵";
     }
   }
 
@@ -62,9 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
     var startTimer = document.getElementById("startTimer");
     var startMoves = document.getElementById("startMoves");
     grid.style.display = "none";
-    timeLeftDisplay.innerHTML = `Your mission is to crush as many candies as possible<br><br>In Play Timer you Have ${timeLeft} seconds to gain 150 points<br><br>In Play Moves you have 10 moves to gain 150 points<br><br>🍬🍩 Now crush that candy! 🍩🍬`;
+    timeLeftDisplay.innerHTML = `Your mission is to crush as many candies as possible<br><br>In Play Timer you have ${timeLeft} seconds to gain 150 points<br><br>In Play Moves you have ${moveLeft} moves to gain 150 points<br><br>🍬🍩 Now crush that candy! 🍩🍬`;
 
     startTimer.onclick = function () {
+      /* const audio = document.querySelector("#player");
+      audio.play(); */
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
       grid.style.display = "flex";
@@ -445,6 +454,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     }
   };
-  /*   const audio = document.querySelector("#player");
-  audio.play(); */
 });
