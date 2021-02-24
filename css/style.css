@@ -1,3 +1,10 @@
+body {
+  background-image: url("https://cdn.gamedevmarket.net/wp-content/uploads/20191203151404/082c4faf72d352b18b32cf82b6ac68ad-700x389.jpg");
+  background-size: 100%;
+  max-width: 100vh;
+  display: flex;
+}
+
 .grid {
   height: 560px;
   min-width: 560px;
@@ -15,24 +22,6 @@
 .grid div {
   height: 70px;
   width: 70px;
-}
-
-#startTimer,
-#startMoves {
-  margin-bottom: 10px;
-  font-family: "Pacifico", cursive;
-  box-sizing: border-box;
-  min-width: 100px;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-  border-style: solid;
-  border-color: #fe4495;
-  text-shadow: 3px 2px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 40px;
-  background-image: linear-gradient(#fe4495, #d5095f);
-  border: none;
-  outline: none;
 }
 
 h1 {
@@ -57,23 +46,34 @@ h4 {
   margin-left: 10px;
 }
 
-#score {
-  font-family: "Lobster", cursive;
-  color: white;
-  font-size: 85px;
-  text-shadow: 5px 10px 5px #fb75ff;
-  margin-top: -30px;
+#startTimer,
+#startMoves {
+  margin-bottom: 10px;
+  font-family: "Pacifico", cursive;
+  box-sizing: border-box;
+  min-width: 100px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  border-style: solid;
+  border-color: #fe4495;
+  text-shadow: 3px 2px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  background-image: linear-gradient(#fe4495, #d5095f);
+  border: none;
+  outline: none;
 }
 
 .invisible {
   background-color: white;
 }
 
-body {
-  background-image: url("https://cdn.gamedevmarket.net/wp-content/uploads/20191203151404/082c4faf72d352b18b32cf82b6ac68ad-700x389.jpg");
-  background-size: 100%;
-  max-width: 100vh;
-  display: flex;
+#score {
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 85px;
+  text-shadow: 5px 10px 5px #fb75ff;
+  margin-top: -30px;
 }
 
 .score-board {
