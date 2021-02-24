@@ -16,7 +16,7 @@
 <p>The objective of this game is to achieve the defined score. There are two options for game modes: Play Timer and Play Moves. In the timer, there is a time limit for making the combinations. And in moves, there is a movement limit. When this limit is exhausted, it is possible to know if you won or lost by the message that will appear on the screen.
 
 ## Installing
-<p>You can run it offline by downloading/cloning the project files or you can run my online instance from [here](https://michaloumen.github.io/projeto-1-game/)
+<p>You can run it offline by downloading/cloning the project files or you can run my online instance from: https://michaloumen.github.io/projeto-1-game/
 
 ----------------------------
 ## Acknowledgments 
@@ -27,7 +27,7 @@
 
 ## About me  
 * Michelle Mendonça 
-* [Github](https://github.com/michaloumen)
-* [E-mail](michelle.lmendonca@gmail.com)
-* [Linkedin](https://www.linkedin.com/in/michelle-louren%C3%A7o-* mendon%C3%A7a-856b83169/)
+* Github: https://github.com/michaloumen
+* E-mail: michelle.lmendonca@gmail.com
+* Linkedin: https://www.linkedin.com/in/michelle-louren%C3%A7o-mendon%C3%A7a-856b83169/
 
