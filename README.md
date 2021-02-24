@@ -1,5 +1,5 @@
 # Project #1
-<img src="Captura de tela de 2021-02-24 14-54-44.png" width="300">
+<img src="Captura de tela de 2021-02-24 14-54-44.png" width="500">
 
 <p>This is my first project as part of the Ironhack bootcamp. Where to play the Candy Crush game using HTML, CSS and Javascript.
 
