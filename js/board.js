@@ -8,13 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const width = 8; //será de 8x8
   const squares = [];
   let score = 0;
-  let timeLeft = 30;
-  let moveLeft = 30;
+  let timeLeft = 10;
+  let moveLeft = 10;
+  let points = 50;
   let colorBeingDragged;
   let colorBeingReplaced;
   let squareIdBeingDragged;
   let squareIdBeingReplaced;
   let mode = "";
+
+  const gameSound = new Audio();
+  gameSound.src = "/Candy Crush Saga Theme - piano arrangement_160k.wav";
+  gameSound.volume = 1.0;
 
   const candyColors = [
     "url(images/red-candy.png)",
@@ -26,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function countDown() {
-    console.log("oi");
     timeLeftDisplay.innerHTML = `Seconds left: ${timeLeft}<br><br>SCORE:`;
     setInterval(function () {
       if (timeLeft <= 0) {
@@ -36,29 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       timeLeftDisplay.innerHTML = `Seconds left: ${timeLeft}<br><br>SCORE:`;
       timeLeft -= 1;
-      if (timeLeft <= 0 && score > 150) {
+      if (timeLeft <= 0 && score > points) {
         timeLeftDisplay.innerHTML = "Congrats, you won! 🎉";
       }
-      if (timeLeft <= 0 && score < 150) {
+      if (timeLeft <= 0 && score < points) {
         timeLeftDisplay.innerHTML = "You ran out of moves 🥵";
       }
     }, 1000);
   }
 
   function countMoves() {
-    if (moveLeft > 0) {
+    if (moveLeft > -1) {
       timeLeftDisplay.style.display = "none";
       moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}<br><br>SCORE:`;
     }
-    if (moveLeft === 0) {
-      moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}<br><br>SCORE:`;
+
+    if (moveLeft === -1) {
       grid.style.display = "none";
     }
 
-    if (moveLeft <= 0 && score > 150) {
+    if (moveLeft <= 0 && score > points) {
       moveLeftDisplay.innerHTML = "Congrats, you won! 🎉";
     }
-    if (moveLeft <= 0 && score < 150) {
+    if (moveLeft <= 0 && score < points) {
       moveLeftDisplay.innerHTML = "You ran out of moves 🥵";
     }
   }
@@ -69,11 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
     var startTimer = document.getElementById("startTimer");
     var startMoves = document.getElementById("startMoves");
     grid.style.display = "none";
-    timeLeftDisplay.innerHTML = `Your mission is to crush as many candies as possible<br><br>In Play Timer you have ${timeLeft} seconds to gain 150 points<br><br>In Play Moves you have ${moveLeft} moves to gain 150 points<br><br>🍬🍩 Now crush that candy! 🍩🍬`;
+    timeLeftDisplay.innerHTML = `In Play Timer you have ${timeLeft} seconds to gain ${points} points<br><br>In Play Moves you have ${moveLeft} moves to gain ${points} points<br><br>🍬🍩 Now crush that candy! 🍩🍬`;
 
     startTimer.onclick = function () {
       /* const audio = document.querySelector("#player");
       audio.play(); */
+      gameSound.play();
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
       grid.style.display = "flex";
@@ -82,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     startMoves.onclick = function () {
+      gameSound.play();
       document.getElementById("startMoves").style.display = "none";
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
