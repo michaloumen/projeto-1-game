@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let squareIdBeingReplaced;
   let mode = "";
 
-  const gameSound = new Audio();
-  gameSound.src = "/Candy Crush Saga Theme - piano arrangement_160k.wav";
-  gameSound.volume = 1.0;
+  /*   const gameSound = new Audio();
+  gameSound.src = "/Jelly Level - Candy Crush Saga (128 kbps).mp3";
+  gameSound.volume = 1.0; */
 
   const candyColors = [
     "url(images/red-candy.png)",
@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       timeLeftDisplay.innerHTML = `Seconds left: ${timeLeft}<br><br>SCORE:`;
       timeLeft -= 1;
-      if (timeLeft <= 0 && score > points) {
+      if (timeLeft <= 0 || score > points) {
         timeLeftDisplay.innerHTML = "Congrats, you won! 🎉";
+        grid.style.display = "none";
       }
       if (timeLeft <= 0 && score < points) {
         timeLeftDisplay.innerHTML = "You ran out of moves 🥵";
@@ -50,18 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function countMoves() {
-    if (moveLeft > -1) {
+    if (moveLeft > 0) {
       timeLeftDisplay.style.display = "none";
       moveLeftDisplay.innerHTML = `Moves Left: ${moveLeft}<br><br>SCORE:`;
     }
 
-    if (moveLeft === -1) {
+    if (moveLeft === 0) {
       grid.style.display = "none";
     }
 
-    if (moveLeft <= 0 && score > points) {
+    if (moveLeft <= 0 || score > points) {
       moveLeftDisplay.innerHTML = "Congrats, you won! 🎉";
+      grid.style.display = "none";
     }
+
     if (moveLeft <= 0 && score < points) {
       moveLeftDisplay.innerHTML = "You ran out of moves 🥵";
     }
@@ -76,9 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
     timeLeftDisplay.innerHTML = `In Play Timer you have ${timeLeft} seconds to gain ${points} points<br><br>In Play Moves you have ${moveLeft} moves to gain ${points} points<br><br>🍬🍩 Now crush that candy! 🍩🍬`;
 
     startTimer.onclick = function () {
-      /* const audio = document.querySelector("#player");
-      audio.play(); */
-      gameSound.play();
+      const audio = document.querySelector("#player");
+      audio.play();
+      /* gameSound.play(); */
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
       grid.style.display = "flex";
@@ -88,6 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startMoves.onclick = function () {
       gameSound.play();
+      const audio = document.querySelector("#player");
+      /* gameSound.play(); */
       document.getElementById("startMoves").style.display = "none";
       document.getElementById("startTimer").style.display = "none";
       document.getElementById("startMoves").style.display = "none";
